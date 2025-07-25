@@ -1,0 +1,7 @@
+# Ignore all files in the Delivery Driver directory
+/Delivery Driver/Library/*
+/Delivery Driver/Temp/*
+/Delivery Driver/Logs/*
+/Delivery Driver/UserSettings/*
+/*.csproj
+/*.sln
