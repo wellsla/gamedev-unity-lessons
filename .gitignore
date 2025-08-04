@@ -1,7 +1,13 @@
-# Ignore all files in the Delivery Driver directory
-/Delivery Driver/Library/*
-/Delivery Driver/Temp/*
-/Delivery Driver/Logs/*
-/Delivery Driver/UserSettings/*
+# Ignore all files in any project directory except Delivery Driver
+/*/Library/*
+/*/Temp/*
+/*/Logs/*
+/*/UserSettings/*
 /*.csproj
 /*.sln
+
+# But do NOT ignore some project specifically
+# !/Delivery Driver/Library/*
+# !/Delivery Driver/Temp/*
+# !/Delivery Driver/Logs/*
+# !/Delivery Driver/UserSettings/*
