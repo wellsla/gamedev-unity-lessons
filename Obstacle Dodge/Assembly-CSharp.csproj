@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Mover.cs" />
+    <Compile Include="Assets\Scripts\ObjectHit.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
