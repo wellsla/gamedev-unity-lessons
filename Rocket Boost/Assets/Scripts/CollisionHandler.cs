@@ -5,16 +5,29 @@ using UnityEngine.SceneManagement;
 public class CollisionHandler : MonoBehaviour
 {
     [SerializeField] float levelLoadDelay = 2f;
+    [SerializeField] AudioClip crashSound;
+    [SerializeField] AudioClip successSound;
+
+    AudioSource audioSource;
+
+    bool isControllable = true;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void OnCollisionEnter(Collision other)
     {
+        if (!isControllable) { return; }
+        
         switch (other.gameObject.tag)
         {
             case "Friendly":
                 Debug.Log("Collided with Friendly");
                 break;
             case "Finish":
-                StartSuccessSequence();                
+                StartSuccessSequence();
                 break;
             default:
                 StartCrashSequence();
@@ -24,13 +37,19 @@ public class CollisionHandler : MonoBehaviour
 
     void StartSuccessSequence()
     {
+        isControllable = false;
+        audioSource.Stop();
+        audioSource.PlayOneShot(successSound);
         GetComponent<Movement>().enabled = false;
         Invoke("NextLevel", levelLoadDelay);
     }
 
     void StartCrashSequence()
     {
-        GetComponent<Movement>().enabled = false;
+        isControllable = false;
+        audioSource.Stop();
+        audioSource.PlayOneShot(crashSound);
+        GetComponent<Movement>().enabled = isControllable;
         Invoke("ReloadLevel", levelLoadDelay);
     }
 
