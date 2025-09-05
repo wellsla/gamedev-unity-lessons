@@ -7,6 +7,8 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] float levelLoadDelay = 2f;
     [SerializeField] AudioClip crashSound;
     [SerializeField] AudioClip successSound;
+    [SerializeField] ParticleSystem successParticles;
+    [SerializeField] ParticleSystem crashParticles;
 
     AudioSource audioSource;
 
@@ -20,14 +22,13 @@ public class CollisionHandler : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         if (!isControllable) { return; }
-        
+
         switch (other.gameObject.tag)
         {
-            case "Friendly":
-                Debug.Log("Collided with Friendly");
+            case "Friendly":             
                 break;
-            case "Finish":
-                StartSuccessSequence();
+            case "Finish":     
+                StartSuccessSequence();       
                 break;
             default:
                 StartCrashSequence();
@@ -39,6 +40,7 @@ public class CollisionHandler : MonoBehaviour
     {
         isControllable = false;
         audioSource.Stop();
+        successParticles.Play();
         audioSource.PlayOneShot(successSound);
         GetComponent<Movement>().enabled = false;
         Invoke("NextLevel", levelLoadDelay);
@@ -48,6 +50,7 @@ public class CollisionHandler : MonoBehaviour
     {
         isControllable = false;
         audioSource.Stop();
+        crashParticles.Play();
         audioSource.PlayOneShot(crashSound);
         GetComponent<Movement>().enabled = isControllable;
         Invoke("ReloadLevel", levelLoadDelay);
@@ -55,8 +58,8 @@ public class CollisionHandler : MonoBehaviour
 
     void NextLevel()
     {
-        int currentScene = SceneManager.GetActiveScene().buildIndex;     
-        int nextScene = currentScene + 1; 
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        int nextScene = currentScene + 1;
 
         if (nextScene == SceneManager.sceneCountInBuildSettings)
         {
@@ -67,8 +70,8 @@ public class CollisionHandler : MonoBehaviour
     }
 
     void ReloadLevel()
-    {        
-        int currentScene = SceneManager.GetActiveScene().buildIndex;        
+    {
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentScene);
     }
 }
