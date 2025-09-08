@@ -104,8 +104,8 @@ MonoBehaviour:
       m_Action: Rotation
       m_Flags: 8
     m_Flags: 0
-  thrustStrength: 1000
-  rotationStrength: 50
+  thrustStrength: 2000
+  rotationStrength: 100
   mainEngineSound: {fileID: 8300000, guid: 12a9f2ef902414e4db3ddf7799cb8375, type: 3}
   mainEngineParticles: {fileID: 3127609891016046316}
   leftThrusterParticles: {fileID: 8096538110247354788}
