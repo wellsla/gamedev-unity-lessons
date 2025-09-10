@@ -870,15 +870,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1340269001569604720, guid: b9f1c0c4442435c419a035db0827fb55, type: 3}
       propertyPath: m_Name
-      value: Dropship_01_Tank_Red
+      value: Moving Piston
       objectReference: {fileID: 0}
     - target: {fileID: 1860627810980613834, guid: b9f1c0c4442435c419a035db0827fb55, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.34
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1860627810980613834, guid: b9f1c0c4442435c419a035db0827fb55, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.46
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 1860627810980613834, guid: b9f1c0c4442435c419a035db0827fb55, type: 3}
       propertyPath: m_LocalPosition.z
@@ -886,19 +886,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1860627810980613834, guid: b9f1c0c4442435c419a035db0827fb55, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1860627810980613834, guid: b9f1c0c4442435c419a035db0827fb55, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1860627810980613834, guid: b9f1c0c4442435c419a035db0827fb55, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7071068
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1860627810980613834, guid: b9f1c0c4442435c419a035db0827fb55, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1860627810980613834, guid: b9f1c0c4442435c419a035db0827fb55, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -910,7 +910,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1860627810980613834, guid: b9f1c0c4442435c419a035db0827fb55, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648581101691694355, guid: b9f1c0c4442435c419a035db0827fb55, type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648581101691694355, guid: b9f1c0c4442435c419a035db0827fb55, type: 3}
+      propertyPath: movementVector.y
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
